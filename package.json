@@ -1,12 +1,12 @@
 {
   "name": "lu-ui",
   "files": ["dist"],
-  "main": "./dist/my-lib.umd.js",
-  "module": "./dist/my-lib.es.js",
+  "main": "./dist/lu-ui.umd.js",
+  "module": "./dist/lu-ui.es.js",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.js"
+      "import": "./dist/lu-ui.es.js",
+      "require": "./dist/lu-ui.umd.js"
     }
   },
   "private": true,
