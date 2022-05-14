@@ -1,5 +1,14 @@
 {
   "name": "lu-ui",
+  "files": ["dist"],
+  "main": "./dist/my-lib.umd.js",
+  "module": "./dist/my-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    }
+  },
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -14,6 +23,7 @@
     "@vitejs/plugin-vue": "^2.3.3",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
+    "vite-tsconfig-paths": "^3.4.1",
     "vue-tsc": "^0.34.7"
   }
 }
