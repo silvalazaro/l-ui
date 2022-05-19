@@ -13,8 +13,10 @@
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "baseUrl": ".",
+    "outDir": "dist",
+    "declaration": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@src/*": ["src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
