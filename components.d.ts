@@ -10,10 +10,7 @@ declare module '@vue/runtime-core' {
     ElInput: typeof import('element-plus/es')['ElInput']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     EpCheck: typeof import('~icons/ep/check')['default']
-    EpCircleCheck: typeof import('~icons/ep/circle-check')['default']
-    EpClose: typeof import('~icons/ep/close')['default']
     EpQuestionFilled: typeof import('~icons/ep/question-filled')['default']
-    Help: typeof import('./src/components/tooltip/tooltipHelp/help.vue')['default']
     Input: typeof import('./src/components/input/input.vue')['default']
     TooltipHelp: typeof import('./src/components/tooltip/tooltipHelp/tooltipHelp.vue')['default']
   }

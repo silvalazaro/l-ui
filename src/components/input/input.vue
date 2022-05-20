@@ -24,15 +24,17 @@ import _ from 'lodash'
 import { computed, handleError, ref } from "@vue/runtime-core";
 
 interface Props {
-  required?: boolean;
+ 
+}
+
+const props = withDefaults(defineProps<{
+   required?: boolean;
   modelValue: string;
   label?: string;
   validators?: Array<any>;
   disabled?: boolean;
   observation?: string;
-}
-
-const props = withDefaults(defineProps<Props>(),{});
+}>(),{});
 
 const emit = defineEmits(["update:modelValue", "change"]);
 

@@ -42,14 +42,12 @@ import { ref } from "vue";
 import { watch } from "vue";
 import _ from "lodash";
 
-interface Props {
-  message: string;
+const props = withDefaults(defineProps<{
+    message: string;
   observation?: string;
   help?: boolean;
   tooltip: any;
-}
-
-const props = withDefaults(defineProps<Props>(), {
+}>(), {
   help: false,
   tooltip: {},
 });
