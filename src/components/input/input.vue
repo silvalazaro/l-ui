@@ -1,6 +1,6 @@
 <template>
     <div class="block">
-      <span class="block text-sm font-medium text-slate-700">
+      <span class="block text-left text-sm font-medium text-slate-700">
         <lu-tooltip-help :message="tooltip" :observation="observation" :tooltip="{placement: 'top'}">
           {{ label }}
         </lu-tooltip-help>
