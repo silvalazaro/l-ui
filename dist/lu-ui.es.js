@@ -11296,7 +11296,7 @@ const computed = (getterOrOptions, debugOptions) => {
   return computed$1(getterOrOptions, debugOptions, isInSSRComponentSetup);
 };
 const _hoisted_1$3 = { class: "block" };
-const _hoisted_2$3 = { class: "block text-sm font-medium text-slate-700" };
+const _hoisted_2$3 = { class: "block text-left text-sm font-medium text-slate-700" };
 const _hoisted_3$3 = { class: "mt-2 text-rose-500 text-sm" };
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   props: {
