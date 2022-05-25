@@ -11649,4 +11649,4 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-export { ElCol, ElRow, _sfc_main$1 as LuInput, _sfc_main as LuTooltipHelp };
+export { ElCol as LuElCol, ElRow as LuElRow, _sfc_main$1 as LuInput, _sfc_main as LuTooltipHelp };
