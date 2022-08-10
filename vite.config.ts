@@ -1,12 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
+import Components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import Components from 'unplugin-vue-components/vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
+import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,25 +28,13 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    AutoImport({
-      resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          prefix: 'icon',
-        }),
-      ],
-    }),
     Components({
-      resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          prefix: false,
-          enabledCollections: ['ep'],
-        })
-      ],
+      resolvers: [NaiveUiResolver(),
+        IconsResolver()
+      ]
     }),
-    Icons({
-      autoInstall: true,
+    Icons({ 
+      autoInstall: true
     }),
     dts({ entryRoot: 'src/components' })
   ],

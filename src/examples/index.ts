@@ -1,6 +1,2 @@
-import input from './input/input.vue'
-import tooltip from './tooltip/tooltip.vue'
-export {
-    input,
-    tooltip
-}
+export {default as tooltip} from './tooltip/info/info.vue'
+export *  from './input'

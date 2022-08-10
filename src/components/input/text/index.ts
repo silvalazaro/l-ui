@@ -1,0 +1,1 @@
+export {default as LuInputText} from './text.vue'

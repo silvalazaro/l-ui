@@ -1,16 +1,16 @@
 <template>
     <div class="block">
-      <span class="block text-left text-sm font-medium text-slate-700">
+      <!-- <span class="block text-left text-sm font-medium text-slate-700">
         <lu-tooltip-help :message="tooltip" :observation="observation" :tooltip="{placement: 'top'}">
           {{ label }}
         </lu-tooltip-help>
-      </span>
-      <el-input
+      </span> -->
+      <!-- <el-input
         v-model="value"
         @input="changeInput"
         ref="input"
         :disabled="disabled"
-      />
+      /> -->
       <p class="mt-2 text-rose-500 text-sm">
         {{ message }}
       </p>

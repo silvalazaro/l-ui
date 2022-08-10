@@ -1,6 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import 'element-plus/dist/index.css'
 import './index.css'
+import * as components from './components'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+for(const key in components){
+    app.component(key, components[key])
+}
+
+app.mount('#app')
