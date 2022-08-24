@@ -8,20 +8,20 @@ export class Cnpj implements RuleInterface{
     }
     
     validate(cnpj:string) {
-        if(cnpj && !this.isCnpjValid(cnpj))
+        if(cnpj && !this.isValid(cnpj))
             throw new Error(`${this.name} inválido`)
     }
 
     isCpfValid(cpf: string): boolean {
         const cpfLength = 11;
         const weights = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-        return this.isValid(cpf, cpfLength, weights);
+        return this.checkValid(cpf, cpfLength, weights);
       }
     
-    isCnpjValid(cnpj: string): boolean {
+    isValid(cnpj: string): boolean {
         const cpfLength = 14;
         const weights = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 6];
-        return this.isValid(cnpj, cpfLength, weights);
+        return this.checkValid(cnpj, cpfLength, weights);
       }
     
     formatCpf(cpf: string): string {
@@ -71,7 +71,7 @@ export class Cnpj implements RuleInterface{
           }, '');
       }
     
-      isValid(digits: string, correctDigitsLength: number, weights: number[]): boolean {
+      checkValid(digits: string, correctDigitsLength: number, weights: number[]): boolean {
         const cleanDigits = this.getOnlyNumbers(digits);
         if (cleanDigits.length !== correctDigitsLength || this.isAllTheSameDigits(cleanDigits)) {
           return false;
