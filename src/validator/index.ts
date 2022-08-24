@@ -1,5 +1,6 @@
-import Schema from 'async-validator';
+import { ValidatorAsync } from './asyncValidator/validator'
 import * as createRules from './rules'
+import { Validator } from './validator'
 
 export function createValidator(rules:string, name:string){
     // const listRules = rules.split('|')
@@ -13,4 +14,10 @@ export function createValidator(rules:string, name:string){
     // return new Schema({
     //     name
     // })
+}
+
+export class ValidatorFactory{
+    static createValidator(name:string):Validator {
+        return new ValidatorAsync(name)    
+    }
 }

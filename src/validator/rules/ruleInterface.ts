@@ -1,3 +1,3 @@
 export interface RuleInterface{
-    validate():boolean;
+    validate(value:any):void
 }

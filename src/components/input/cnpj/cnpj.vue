@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import { Validator, ValidatorFactory } from "@src/validator";
 import { computed } from "@vue/runtime-core";
-import {vMask} from '@src/mask/directive'
 // set props
 const props = defineProps<{
   modelValue: string;
+  required: boolean
 }>();
 
 // set events
@@ -15,7 +16,6 @@ const localValue = computed({
     return props.modelValue;
   },
   set(value) {
-       console.log(value)
     emit("update:modelValue", value);
   },
 });
@@ -30,14 +30,11 @@ const remoteValue = computed({
   },
 });
 
-const mask = {
-  mask: '##.###.###/####-##',
-  valor: 10
-}
+const validate = ValidatorFactory.createValidator('CNPJ').cnpj()
 
 </script>
 
 <template>
-    <lu-input-text v-model="localValue" label="CNPJ" v-mask="mask">
+    <lu-input-text v-model="localValue" label="CNPJ" mask="##.###.###/####-##" :validate="validate" >
     </lu-input-text>
 </template>

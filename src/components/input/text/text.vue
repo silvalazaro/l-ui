@@ -1,61 +1,68 @@
 <script lang="ts" setup>
 import { computed, handleError, ref } from "@vue/runtime-core";
-import {createValidator} from "@src/validator"
+import { mask } from "maska";
+import { Validator, ValidatorInterface } from "@src/validator/validator";
 
 // set props
 const props = defineProps<{
   modelValue: string;
   label: string;
-  validate?: any;
+  mask: string;
+  validate?: ValidatorInterface;
 }>();
 
-// set events
+// events
 const emit = defineEmits(["update:modelValue"]);
 
 // computed variables
 const localValue = computed({
   get() {
+    if(props.mask) return mask(props.modelValue, props.mask)
     return props.modelValue;
   },
   set(value) {
     emit("update:modelValue", value);
   },
 });
-
-// set ref
+ 
 // message of error after validation
 const erroMessage = ref('')
 
 const inputStatus = ref('')
 
-// const validator = createValidator('required')
 
-// // methods
-// function validate(value:string){
-//   validator.validate({ name: value }, (errors, fields) => {
-//   if (errors) {
-//     inputStatus.value="error"
-//     erroMessage.value = errors[0].message
-//     return
-//   }
-//   inputStatus.value=""
-//   erroMessage.value = ''
-// });
-// }
+// methods
+function validate(value:string){
+  if(!props.validate) return
+  
+  props.validate.execute(value).then(() => {
+    erroMessage.value = ''
+    inputStatus.value = ""
+  })
+  .catch(e => {
+    inputStatus.value = "error"
+    erroMessage.value = e.message
+  })
+
+}
 
 
 </script>
 
 <template>
-  <div class="block" >
+  <div class="block " >
     <div class="inline-flex w-full">
       <lu-tooltip-info message="Teste de parada tesuoiq peoti">
-        <span class="mr-1">{{ props.label }}</span>
+        <div>
+          <span class="mr-1">{{ props.label }}</span>
+        </div>
       </lu-tooltip-info>
     </div>
-    <n-input v-model:value="localValue" :placeholder="label" :status="inputStatus" />
-    <p class="mt-2 peer-invalid:visible text-pink-600 text-sm" v-if="erroMessage">
+    <n-input v-model:value="localValue" :placeholder="label" :status="inputStatus" @input="validate"/>
+    <div class="text-left">
+      <span class="mt-2 peer-invalid:visible text-pink-600 text-sm" v-if="erroMessage">
       {{erroMessage}}
-    </p>
+    </span>
+    </div>
   </div>
 </template>
