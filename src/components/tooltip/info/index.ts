@@ -1,1 +1,0 @@
-export {default as LuTooltipInfo} from './info.vue'

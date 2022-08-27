@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
@@ -10,6 +12,16 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   server: {
     host: '0.0.0.0'
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    deps: {
+      inline: [
+        "date-fns"
+      ]
+    }
+
   },
   build: {
     lib: {
@@ -29,7 +41,8 @@ export default defineConfig({
   plugins: [
     vue(),
     Components({
-      resolvers: [NaiveUiResolver(),
+      resolvers: [
+        NaiveUiResolver(),
         IconsResolver()
       ]
     }),

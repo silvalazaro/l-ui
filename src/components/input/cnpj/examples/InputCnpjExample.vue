@@ -9,4 +9,3 @@ const cnpj = ref("37045780000104")
 <template>
  <lu-input-cnpj v-model="cnpj" />
 </template>
-

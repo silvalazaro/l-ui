@@ -7,7 +7,7 @@ import { Validator, ValidatorInterface } from "@src/validator/validator";
 const props = defineProps<{
   modelValue: string;
   label: string;
-  mask: string;
+  mask?: string;
   validate?: ValidatorInterface;
 }>();
 
@@ -52,11 +52,11 @@ function validate(value:string){
 <template>
   <div class="block " >
     <div class="inline-flex w-full">
-      <lu-tooltip-info message="Teste de parada tesuoiq peoti">
+      <lu-button-info message="Teste de parada tesuoiq peoti">
         <div>
           <span class="mr-1">{{ props.label }}</span>
         </div>
-      </lu-tooltip-info>
+      </lu-button-info>
     </div>
     <n-input v-model:value="localValue" :placeholder="label" :status="inputStatus" @input="validate"/>
     <div class="text-left">

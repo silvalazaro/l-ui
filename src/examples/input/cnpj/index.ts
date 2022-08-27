@@ -1,1 +1,0 @@
-export {default as inputCnpj } from './example1.vue'

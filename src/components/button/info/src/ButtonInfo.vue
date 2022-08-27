@@ -57,8 +57,8 @@ const openTooltip = () => {
       </div>
     </template>
     <div>
-       <div>{{ message }}</div>
-      <div v-if="observation">{{ observation }}</div>
+       <div data-test="message" >{{ message }}</div>
+       <div data-test="observation" v-if="observation">{{ observation }}</div>
     </div>
     <template #action>
       <i-fluent-checkbox-checked-16-regular class="cursor-pointer" @click="activeTooltip = false"/>

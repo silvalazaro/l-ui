@@ -1,3 +1,3 @@
 export * from './input'
-export * from './tooltip'
+export * from './button'
 export { NButton as LuNButton, NInput as LuNInput } from 'naive-ui'

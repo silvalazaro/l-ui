@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Validator, ValidatorFactory } from "@src/validator";
 import { computed } from "@vue/runtime-core";
+import { LuInputText } from "@src/components"
 // set props
 const props = defineProps<{
   modelValue: string;
