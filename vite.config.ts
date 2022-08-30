@@ -16,6 +16,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
+    setupFiles: ['src/mocks/server.ts'],
     deps: {
       inline: [
         "date-fns"
