@@ -1,0 +1,188 @@
+{
+  "cnpj_raiz": "40154884",
+  "razao_social": "EMPRESA TESTE 1.",
+  "capital_social": "70300000.00",
+  "responsavel_federativo": "",
+  "atualizado_em": "2022-08-13T03:00:00.000Z",
+  "porte": { "id": "05", "descricao": "Demais" },
+  "natureza_juridica": {
+    "id": "2062",
+    "descricao": "Sociedade Empresária Limitada"
+  },
+  "qualificacao_do_responsavel": { "id": 5, "descricao": "Administrador " },
+  "socios": [
+    {
+      "cpf_cnpj_socio": "***659958**",
+      "nome": "NOME 1 SOCIA TESTE",
+      "tipo": "Pessoa Física",
+      "data_entrada": "2021-08-11",
+      "cpf_representante_legal": "***000000**",
+      "nome_representante": null,
+      "faixa_etaria": "31 a 40 anos",
+      "atualizado_em": "2022-08-13T03:00:00.000Z",
+      "pais_id": "1058",
+      "qualificacao_socio": { "id": 5, "descricao": "Administrador " },
+      "qualificacao_representante": null
+    },
+    {
+      "cpf_cnpj_socio": "123456786000130",
+      "nome": "NOME 2 SOCIA TESTE",
+      "tipo": "Pessoa Jurídica",
+      "data_entrada": "2020-12-18",
+      "cpf_representante_legal": "***966178**",
+      "nome_representante": "REPRESENTANTE 1",
+      "faixa_etaria": "Não se aplica",
+      "atualizado_em": "2022-08-13T03:00:00.000Z",
+      "pais_id": "1058",
+      "qualificacao_socio": { "id": 22, "descricao": "Sócio" },
+      "qualificacao_representante": { "id": 5, "descricao": "Administrador " }
+    },
+    {
+      "cpf_cnpj_socio": "***966178**",
+      "nome": "REPRESENTANTE 1",
+      "tipo": "Pessoa Física",
+      "data_entrada": "2020-12-18",
+      "cpf_representante_legal": "***000000**",
+      "nome_representante": null,
+      "faixa_etaria": "71 a 80 anos",
+      "atualizado_em": "2022-08-13T03:00:00.000Z",
+      "pais_id": "1058",
+      "qualificacao_socio": { "id": 5, "descricao": "Administrador " },
+      "qualificacao_representante": null
+    }
+  ],
+  "simples": null,
+  "estabelecimento": {
+    "cnpj": "41703753000140",
+    "atividades_secundarias": [
+      {
+        "id": "6462000",
+        "secao": "K",
+        "divisao": "64",
+        "grupo": "64.6",
+        "classe": "64.62-0",
+        "subclasse": "6462-0/00",
+        "descricao": "Holdings de instituições não financeiras"
+      },
+      {
+        "id": "7739099",
+        "secao": "N",
+        "divisao": "77",
+        "grupo": "77.3",
+        "classe": "77.39-0",
+        "subclasse": "7739-0/99",
+        "descricao": "Aluguel de outras máquinas e equipamentos comerciais e industriais não especificados anteriormente, sem operador"
+      },
+      {
+        "id": "4752100",
+        "secao": "G",
+        "divisao": "47",
+        "grupo": "47.5",
+        "classe": "47.52-1",
+        "subclasse": "4752-1/00",
+        "descricao": "Comércio varejista especializado de equipamentos de telefonia e comunicação"
+      },
+      {
+        "id": "6110803",
+        "secao": "J",
+        "divisao": "61",
+        "grupo": "61.1",
+        "classe": "61.10-8",
+        "subclasse": "6110-8/03",
+        "descricao": "Serviços de comunicação multimídia - SCM"
+      },
+      {
+        "id": "6190601",
+        "secao": "J",
+        "divisao": "61",
+        "grupo": "61.9",
+        "classe": "61.90-6",
+        "subclasse": "6190-6/01",
+        "descricao": "Provedores de acesso às redes de comunicações"
+      },
+      {
+        "id": "6190602",
+        "secao": "J",
+        "divisao": "61",
+        "grupo": "61.9",
+        "classe": "61.90-6",
+        "subclasse": "6190-6/02",
+        "descricao": "Provedores de voz sobre protocolo Internet - VOIP"
+      },
+      {
+        "id": "6190699",
+        "secao": "J",
+        "divisao": "61",
+        "grupo": "61.9",
+        "classe": "61.90-6",
+        "subclasse": "6190-6/99",
+        "descricao": "Outras atividades de telecomunicações não especificadas anteriormente"
+      },
+      {
+        "id": "9512600",
+        "secao": "S",
+        "divisao": "95",
+        "grupo": "95.1",
+        "classe": "95.12-6",
+        "subclasse": "9512-6/00",
+        "descricao": "Reparação e manutenção de equipamentos de comunicação"
+      }
+    ],
+    "cnpj_raiz": "40154884",
+    "cnpj_ordem": "0001",
+    "cnpj_digito_verificador": "53",
+    "tipo": "Matriz",
+    "nome_fantasia": null,
+    "situacao_cadastral": "Ativa",
+    "data_situacao_cadastral": "2020-12-18",
+    "data_inicio_atividade": "2020-12-18",
+    "nome_cidade_exterior": null,
+    "tipo_logradouro": "RUA",
+    "logradouro": "TESTE RUA",
+    "numero": "3040",
+    "complemento": "ANDAR teste",
+    "bairro": "CENTRO",
+    "cep": "01009907",
+    "ddd1": "11",
+    "telefone1": "10203040",
+    "ddd2": null,
+    "telefone2": null,
+    "ddd_fax": null,
+    "fax": null,
+    "email": "email@teste.com",
+    "situacao_especial": null,
+    "data_situacao_especial": null,
+    "atualizado_em": "2022-08-13T03:00:00.000Z",
+    "atividade_principal": {
+      "id": "6130200",
+      "secao": "J",
+      "divisao": "61",
+      "grupo": "61.3",
+      "classe": "61.30-2",
+      "subclasse": "6130-2/00",
+      "descricao": "Telecomunicações por satélite"
+    },
+    "pais": {
+      "id": "1058",
+      "iso2": "BR",
+      "iso3": "BRA",
+      "nome": "Brasil",
+      "comex_id": "105"
+    },
+    "estado": { "id": 26, "nome": "São Paulo", "sigla": "SP", "ibge_id": 35 },
+    "cidade": {
+      "id": 3832,
+      "nome": "São Paulo",
+      "ibge_id": 3550308
+    },
+    "motivo_situacao_cadastral": null,
+    "inscricoes_estaduais": [
+      {
+        "inscricao_estadual": "10203040",
+        "ativo": true,
+        "atualizado_em": "2022-07-08T12:35:51.365Z",
+        "estado": { "id": 3, "nome": "Amazonas", "sigla": "AM", "ibge_id": 13 }
+      }
+    ]
+  }
+}
