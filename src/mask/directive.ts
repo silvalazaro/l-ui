@@ -3,12 +3,10 @@ import { VNode } from 'vue'
 
 export const vMask = {
   created: (el: HTMLElement, binding: VNode) => {
-    binding.value.mask = '#-##-##'
     createMask(el.querySelector('input'), {
-      mask: binding.value.mask
+      mask: binding.value
     });
   },
   updated: (el: HTMLElement, binding: VNode) => {
-    console.log(binding.value)
   },
 }

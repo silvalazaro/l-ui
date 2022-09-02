@@ -2,31 +2,26 @@
 import { Validator, ValidatorFactory } from "@src/validator";
 import { computed } from "@vue/runtime-core";
 import { LuInputText } from "@src/components"
-// set props
+import { delayedFetchCnpj } from "@src/service/cnpj"
+
+ // set props
 const props = defineProps<{
   modelValue: string;
-  required: boolean
+  required?: boolean
 }>();
 
 // set events
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue", "search"]);
 
 // computed variables
 const localValue = computed({
   get() {
     return props.modelValue;
   },
-  set(value) {
-    emit("update:modelValue", value);
-  },
-});
-
-const remoteValue = computed({
-  get() {
-    return props.modelValue;
-  },
-  set(value) {
- 
+  set(value:string) {
+    // delayedFetchCnpj(value).then(e => {
+    //   emit('search', e)
+    // })
     emit("update:modelValue", value);
   },
 });

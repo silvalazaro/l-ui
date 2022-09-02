@@ -1,7 +1,7 @@
 import { CnpjAsync } from "./asyncValidator/rules/cnpj"
 import { RequiredAsync } from "./asyncValidator/rules/required"
-import rules from "./rules"
-import { RuleInterface } from "./rules/ruleInterface"
+import { Cpf } from "./rules/Cpf"
+import { RuleInterface } from "./rules/RuleInterface"
 
 export interface ValidatorInterface {
     execute(value:any): Promise<void>
@@ -32,6 +32,11 @@ export abstract class Validator implements ValidatorInterface {
 
     cnpj() {
         this.rules.push(new CnpjAsync(this.name))
+        return this
+    }
+
+    cpf() {
+        this.rules.push(new Cpf(this.name))
         return this
     }
 }

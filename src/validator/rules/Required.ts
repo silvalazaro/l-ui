@@ -1,4 +1,4 @@
-import { RuleInterface } from "./ruleInterface";
+import { RuleInterface } from "./RuleInterface";
 
 export class Required implements RuleInterface{
     name:string

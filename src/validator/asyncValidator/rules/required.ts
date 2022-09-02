@@ -1,4 +1,4 @@
-import { Required } from "@src/validator/rules/required"
+import { Required } from "@src/validator/rules/Required"
 
 export class RequiredAsync extends Required{
    

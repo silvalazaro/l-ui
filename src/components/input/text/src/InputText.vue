@@ -1,68 +1,97 @@
-<script lang="ts" setup>
-import { computed, handleError, ref } from "@vue/runtime-core";
-import { mask } from "maska";
-import { Validator, ValidatorInterface } from "@src/validator/validator";
-
-// set props
-const props = defineProps<{
-  modelValue: string;
-  label: string;
-  mask?: string;
-  validate?: ValidatorInterface;
-}>();
-
-// events
-const emit = defineEmits(["update:modelValue"]);
-
-// computed variables
-const localValue = computed({
-  get() {
-    if(props.mask) return mask(props.modelValue, props.mask)
-    return props.modelValue;
-  },
-  set(value) {
-    emit("update:modelValue", value);
-  },
-});
- 
-// message of error after validation
-const erroMessage = ref('')
-
-const inputStatus = ref('')
-
-
-// methods
-function validate(value:string){
-  if(!props.validate) return
-  
-  props.validate.execute(value).then(() => {
-    erroMessage.value = ''
-    inputStatus.value = ""
-  })
-  .catch(e => {
-    inputStatus.value = "error"
-    erroMessage.value = e.message
-  })
-
-}
-
-
-</script>
-
 <template>
-  <div class="block " >
+  <div class="block">
     <div class="inline-flex w-full">
-      <lu-button-info message="Teste de parada tesuoiq peoti">
+      <lu-button-info :message="props.message">
         <div>
           <span class="mr-1">{{ props.label }}</span>
         </div>
       </lu-button-info>
     </div>
-    <n-input v-model:value="localValue" :placeholder="label" :status="inputStatus" @input="validate"/>
+    <n-input
+      v-model:value="localValue"
+      :placeholder="label"
+      @input="input"
+      :status="inputStatus"
+      v-mask="props.mask"
+      ref="el"
+    />
     <div class="text-left">
-      <span class="mt-2 peer-invalid:visible text-pink-600 text-sm" v-if="erroMessage">
-      {{erroMessage}}
-    </span>
+      <span
+        class="mt-2 peer-invalid:visible text-pink-600 text-sm"
+        v-if="erroMessage"
+      >
+        {{ erroMessage }}
+      </span>
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { LuButtonInfo } from '@src/components'
+import { computed, handleError } from "@vue/runtime-core";
+import { mask } from "maska";
+import { Validator, ValidatorInterface } from "@src/validator/validator";
+import { vMask } from "@src/mask";
+import { ref, nextTick, onMounted } from "vue";
+
+interface PropsInterface{
+  modelValue: any;
+  label: string;
+  mask?: string;
+  message?: string;
+  validator?: ValidatorInterface;
+}
+
+// set props
+const props = withDefaults(defineProps<PropsInterface>(), {
+  label: 'Digite'
+})
+
+// set events
+const emit = defineEmits(["update:modelValue"]);
+
+// set refs
+const maskedValue = ref("");
+const el = ref();
+
+// computed variables
+const localValue = computed({
+  get() {
+    return maskedValue.value || props.modelValue;
+  },
+  set(value: any) {
+    maskedValue.value = value;
+  },
+});
+
+// message of error after validation
+const erroMessage = ref("");
+
+const inputStatus = ref("");
+
+// methods
+function validate(value: string, validator: ValidatorInterface) {
+  validator
+    .execute(value)
+    .then(() => {
+      erroMessage.value = "";
+      inputStatus.value = "";
+    })
+    .catch((e) => {
+      inputStatus.value = "error";
+      erroMessage.value = e.message;
+    });
+}
+
+function input(value: any) {
+  if (props.mask)
+    emit("update:modelValue", mask(value, props.mask, undefined, false));
+  else emit("update:modelValue", value);
+
+  if (props.validator) validate(value, props.validator);
+}
+
+onMounted(() => {
+  if(props.validator) validate(props.modelValue, props.validator)
+})
+</script>
