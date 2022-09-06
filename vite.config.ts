@@ -7,6 +7,7 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import dts from 'vite-plugin-dts'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -27,9 +28,9 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: 'src/components/index.ts',
+      entry: resolve(__dirname, '/src/components/index.ts'),
       name: 'LuUi',
-      //  fileName: (format) => `lu-ui.${format}.js`
+      fileName: 'lu-ui'
     },
     rollupOptions: {
       external: ['vue'],

@@ -7,25 +7,16 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ButtonInfo: typeof import('./src/components/button/info/src/ButtonInfo.vue')['default']
     ButtonInfoExample: typeof import('./src/components/button/info/examples/ButtonInfoExample.vue')['default']
-    ButtonInfoExample1: typeof import('./src/components/button/info/examples/ButtonInfoExample1.vue')['default']
-    Cnpj: typeof import('./src/components/input/cnpj/src/Cnpj.vue')['default']
-    Example1: typeof import('./src/components/input/text/examples/example1.vue')['default']
-    IconInfo: typeof import('./src/components/button/info/src/IconInfo.vue')['default']
-    IconInfoExample: typeof import('./src/components/button/info/examples/IconInfoExample.vue')['default']
     IFluentCheckboxChecked16Regular: typeof import('~icons/fluent/checkbox-checked16-regular')['default']
     IFluentInfo24Regular: typeof import('~icons/fluent/info24-regular')['default']
-    Info: typeof import('./src/components/tooltip/info/examples/info.vue')['default']
-    Input: typeof import('./src/components/input/input.vue')['default']
     InputCnpj: typeof import('./src/components/input/cnpj/src/InputCnpj.vue')['default']
     InputCnpjExample: typeof import('./src/components/input/cnpj/examples/InputCnpjExample.vue')['default']
+    InputCpf: typeof import('./src/components/input/cpf/src/InputCpf.vue')['default']
+    InputCpfExample: typeof import('./src/components/input/cpf/examples/InputCpfExample.vue')['default']
     InputText: typeof import('./src/components/input/text/src/InputText.vue')['default']
     InputTextExample: typeof import('./src/components/input/text/examples/InputTextExample.vue')['default']
-    NButton: typeof import('naive-ui')['NButton']
     NInput: typeof import('naive-ui')['NInput']
     NPopconfirm: typeof import('naive-ui')['NPopconfirm']
-    Text: typeof import('./src/components/input/text/src/Text.vue')['default']
-    TooltipInfo: typeof import('./src/components/icon/info/src/TooltipInfo.vue')['default']
-    TooltipInfoExample: typeof import('./src/components/icon/info/examples/TooltipInfoExample.vue')['default']
   }
 }
 
