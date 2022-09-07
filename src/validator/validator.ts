@@ -1,6 +1,7 @@
 import { CnpjAsync } from "./asyncValidator/rules/cnpj"
 import { RequiredAsync } from "./asyncValidator/rules/required"
 import { Cpf } from "./rules/Cpf"
+import { Mail } from "./rules/Mail"
 import { RuleInterface } from "./rules/RuleInterface"
 
 export interface ValidatorInterface {
@@ -37,6 +38,11 @@ export abstract class Validator implements ValidatorInterface {
 
     cpf() {
         this.rules.push(new Cpf(this.name))
+        return this
+    }
+
+    mail() {
+        this.rules.push(new Mail(this.name))
         return this
     }
 }
