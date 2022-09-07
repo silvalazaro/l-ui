@@ -1,5 +1,5 @@
 import { mask } from "maska";
-import { ValidatorInterface } from '../../../../validator/validator';
+import { ValidatorInterface } from '../../../../../../../../../node/app/src/validator/validator';
 declare const _sfc_main: import("vue").DefineComponent<{
     modelValue: {
         type: null;
@@ -38,64 +38,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
     inputStatus: import("vue").Ref<string>;
     validate: (value: string, validator: ValidatorInterface) => void;
     input: (value: any) => void;
-    LuButtonInfo: import("vue").DefineComponent<{
-        message: {
-            type: StringConstructor;
-            required: true;
-        };
-        observation: {
-            type: StringConstructor;
-            required: false;
-        };
-        help: {
-            type: BooleanConstructor;
-            required: false;
-            default: boolean;
-        };
-        active: {
-            type: BooleanConstructor;
-            required: false;
-            default: boolean;
-        };
-    }, {
-        props: {
-            message: string;
-            observation?: string | undefined;
-            help: boolean;
-            active: boolean;
-        };
-        emit: (event: "update:active" | "change", ...args: any[]) => void;
-        localActiveTooltip: import("vue").Ref<boolean>;
-        showHelp: import("vue").Ref<boolean>;
-        activeTooltip: import("vue").WritableComputedRef<boolean>;
-        showObservation: import("vue").Ref<boolean>;
-        openTooltip: () => void;
-    }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:active" | "change")[], "update:active" | "change", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-        message: {
-            type: StringConstructor;
-            required: true;
-        };
-        observation: {
-            type: StringConstructor;
-            required: false;
-        };
-        help: {
-            type: BooleanConstructor;
-            required: false;
-            default: boolean;
-        };
-        active: {
-            type: BooleanConstructor;
-            required: false;
-            default: boolean;
-        };
-    }>> & {
-        "onUpdate:active"?: ((...args: any[]) => any) | undefined;
-        onChange?: ((...args: any[]) => any) | undefined;
-    }, {
-        help: boolean;
-        active: boolean;
-    }>;
+    LuButtonInfo: any;
     mask: typeof mask;
     vMask: {
         created: (el: HTMLElement, binding: import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {

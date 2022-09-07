@@ -1,5 +1,5 @@
 import { ValidatorAsync } from './asyncValidator/validator'
-import * as createRules from './rules'
+export * from './rules'
 import { Validator } from './validator'
 
 export function createValidator(rules:string, name:string){

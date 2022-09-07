@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { LuInputText } from "@src/components";
+import { InputText } from "@src/components";
 import { ref } from "@vue/reactivity";
 import { ValidatorFactory } from "@src/validator";
 
@@ -9,7 +9,7 @@ const validator = ValidatorFactory.createValidator("Nome").required();
 
 <template>
   <div>
-    <lu-input-text
+    <input-text
       v-model="name"
       mask="(##).###/##"
     />

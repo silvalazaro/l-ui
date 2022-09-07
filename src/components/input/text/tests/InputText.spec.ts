@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { LuInputText } from '../index'
+import { InputText } from '../index'
 import { describe, expect, it, test } from 'vitest'
 import { ref } from 'vue'
 
@@ -7,7 +7,7 @@ describe('InputText test', () => {
   let name = '10203040'
   const label = 'Your name'
   const mask = '(##).##.##'
-  const wrapper =  mount(LuInputText, {
+  const wrapper =  mount(InputText, {
       props: {
         modelValue: name,
         label: label,

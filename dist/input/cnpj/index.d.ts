@@ -1,1 +1,1 @@
-export { default as LuInputCnpj } from './src/InputCnpj.vue';
+export { default as InputCnpj } from './src/InputCnpj.vue';

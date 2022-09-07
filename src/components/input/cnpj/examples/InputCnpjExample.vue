@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { LuInputCnpj } from "@src/components";
+import { InputCnpj } from "@src/components";
 import { reactive, ref } from "@vue/reactivity";
 
 const cnpj = ref("37045780000104");
@@ -8,7 +8,7 @@ const companyCnpjWs = reactive({});
 
 <template>
   <div>
-    <lu-input-cnpj v-model="cnpj" @search="(e) => (companyCnpjWs = e)" />
+    <input-cnpj v-model="cnpj" @search="(e) => (companyCnpjWs = e)" />
     <div style="max-width: 200px">
        <pre>
        <code>

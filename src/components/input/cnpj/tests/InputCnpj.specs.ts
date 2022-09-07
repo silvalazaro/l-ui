@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
-import { LuInputCnpj } from '../index'
+import { InputCnpj } from '../index'
 import { describe, expect, it } from 'vitest'
 
 
 describe('InputCnpj test', () => {
-  // const wrapper = mount(LuInputCnpj)
+  // const wrapper = mount(InputCnpj)
   
   it('renders a greeting', () => {
     console.log('lazaro francisco')

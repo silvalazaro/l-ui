@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils'
-import { LuButtonInfo } from '../index'
+import { ButtonInfo } from '../index'
 import { describe, expect, it } from 'vitest'
 import { nextTick, ref } from 'vue'
 
 
 describe('ButtonInfo.spec test', () => {
   const message = 'This is test message'
-  const wrapper = mount(LuButtonInfo, {
+  const wrapper = mount(ButtonInfo, {
     props: {
       message: message
     },

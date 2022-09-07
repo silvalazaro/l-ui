@@ -1,6 +1,6 @@
 
 import { assert, expect, test } from "vitest"
-import { Cnpj } from "@src/validator/rules/cnpj" 
+import { Cnpj } from "@src/validator/rules/Cnpj" 
 
 const cnpj = new Cnpj("CNPJ")
 

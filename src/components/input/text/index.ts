@@ -1,1 +1,1 @@
-export {default as LuInputText} from './src/InputText.vue'
+export {default as InputText} from './src/InputText.vue'

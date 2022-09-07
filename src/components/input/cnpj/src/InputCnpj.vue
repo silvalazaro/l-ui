@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Validator, ValidatorFactory } from "@src/validator";
 import { computed } from "@vue/runtime-core";
-import { LuInputText } from "@src/components"
+import { InputText } from "@src/components"
 import { delayedFetchCnpj } from "@src/service/cnpj"
 
  // set props
@@ -19,18 +19,15 @@ const localValue = computed({
     return props.modelValue;
   },
   set(value:string) {
-    // delayedFetchCnpj(value).then(e => {
-    //   emit('search', e)
-    // })
     emit("update:modelValue", value);
   },
 });
 
-const validate = ValidatorFactory.createValidator('CNPJ').cnpj()
+const validator = ValidatorFactory.createValidator('CNPJ').cnpj()
 
 </script>
 
 <template>
-    <lu-input-text v-model="localValue" label="CNPJ" mask="##.###.###/####-##" :validate="validate" >
-    </lu-input-text>
+    <input-text v-model="localValue" label="CNPJ" mask="##.###.###/####-##" :validator="validator" >
+    </input-text>
 </template>

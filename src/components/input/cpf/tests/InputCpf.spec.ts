@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils'
-import { LuInputCpf } from '../index'
+import { InputCpf } from '../index'
 import { describe, expect, it } from 'vitest'
 import { ref } from 'vue'
 
 
 describe('InputCpf test', () => {
-  const wrapper =  mount(LuInputCpf, {
+  const wrapper =  mount(InputCpf, {
       props: {
         modelValue: '10'
       }

@@ -1,11 +1,9 @@
 <template>
   <div class="block">
     <div class="inline-flex w-full">
-      <lu-button-info :message="props.message">
-        <div>
+      <button-info :message="props.message">
           <span class="mr-1">{{ props.label }}</span>
-        </div>
-      </lu-button-info>
+      </button-info>
     </div>
     <n-input
       v-model:value="localValue"
@@ -27,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import { LuButtonInfo } from '@src/components'
+import { ButtonInfo } from '@src/components'
 import { computed, handleError } from "@vue/runtime-core";
 import { mask } from "maska";
 import { Validator, ValidatorInterface } from "@src/validator/validator";

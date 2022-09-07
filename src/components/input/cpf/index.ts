@@ -1,1 +1,1 @@
-export {default as LuInputCpf} from './src/InputCpf.vue'
+export {default as InputCpf} from './src/InputCpf.vue'
