@@ -1,1 +1,1 @@
-export { default as LuButtonInfo } from './src/ButtonInfo.vue';
+export { default as ButtonInfo } from './src/ButtonInfo.vue';

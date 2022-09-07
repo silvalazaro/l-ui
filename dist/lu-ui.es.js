@@ -10548,9 +10548,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
             message: props.message
           }, {
             default: withCtx(() => [
-              createElementVNode("div", null, [
-                createElementVNode("span", _hoisted_3$3, toDisplayString(props.label), 1)
-              ])
+              createElementVNode("span", _hoisted_3$3, toDisplayString(props.label), 1)
             ]),
             _: 1
           }, 8, ["message"])
@@ -10808,15 +10806,15 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         emit("update:modelValue", value);
       }
     });
-    const validate = ValidatorFactory.createValidator("CNPJ").cnpj();
+    const validator = ValidatorFactory.createValidator("CNPJ").cnpj();
     return (_ctx, _cache) => {
       return openBlock(), createBlock(unref(_sfc_main$3), {
         modelValue: unref(localValue),
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(localValue) ? localValue.value = $event : null),
         label: "CNPJ",
         mask: "##.###.###/####-##",
-        validate: unref(validate)
-      }, null, 8, ["modelValue", "validate"]);
+        validator: unref(validator)
+      }, null, 8, ["modelValue", "validator"]);
     };
   }
 });
@@ -10950,4 +10948,4 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-export { _sfc_main as LuButtonInfo, _sfc_main$2 as LuInputCnpj, _sfc_main$1 as LuInputCpf, _sfc_main$3 as LuInputText, NButton as LuNButton, __unplugin_components_0$1 as LuNInput };
+export { _sfc_main as ButtonInfo, _sfc_main$2 as InputCnpj, _sfc_main$1 as InputCpf, _sfc_main$3 as InputText, NButton, __unplugin_components_0$1 as NInput };
