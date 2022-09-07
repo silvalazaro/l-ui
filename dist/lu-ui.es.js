@@ -10495,7 +10495,7 @@ const _hoisted_5 = {
   key: 0,
   class: "mt-2 peer-invalid:visible text-pink-600 text-sm"
 };
-const _sfc_main$3 = /* @__PURE__ */ defineComponent({
+const _sfc_main$4 = /* @__PURE__ */ defineComponent({
   __name: "InputText",
   props: {
     modelValue: null,
@@ -10752,6 +10752,22 @@ class Cpf {
     return `${digits[digitsLength - 1]}${checker}`;
   }
 }
+class Mail {
+  constructor(name = "E-mail") {
+    __publicField(this, "name");
+    this.name = name;
+  }
+  isValid(mail) {
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return filter.test(mail);
+  }
+  validate(value) {
+    if (!value)
+      return;
+    if (!this.isValid(value))
+      throw new Error(`O campo ${this.name} \xE9 inv\xE1lido`);
+  }
+}
 class Validator {
   constructor(name) {
     __publicField(this, "name");
@@ -10781,6 +10797,10 @@ class Validator {
     this.rules.push(new Cpf(this.name));
     return this;
   }
+  mail() {
+    this.rules.push(new Mail(this.name));
+    return this;
+  }
 }
 class ValidatorAsync extends Validator {
 }
@@ -10789,7 +10809,7 @@ class ValidatorFactory {
     return new ValidatorAsync(name);
   }
 }
-const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+const _sfc_main$3 = /* @__PURE__ */ defineComponent({
   __name: "InputCnpj",
   props: {
     modelValue: null,
@@ -10808,7 +10828,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     });
     const validator = ValidatorFactory.createValidator("CNPJ").cnpj();
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(unref(_sfc_main$3), {
+      return openBlock(), createBlock(unref(_sfc_main$4), {
         modelValue: unref(localValue),
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(localValue) ? localValue.value = $event : null),
         label: "CNPJ",
@@ -10818,7 +10838,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     };
   }
 });
-const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   __name: "InputCpf",
   props: {
     modelValue: null,
@@ -10838,11 +10858,40 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     });
     const validator = ValidatorFactory.createValidator("CPF").cpf();
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(unref(_sfc_main$3), {
+      return openBlock(), createBlock(unref(_sfc_main$4), {
         modelValue: unref(localValue),
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(localValue) ? localValue.value = $event : null),
         label: props.label,
         mask: "###.###.###-##",
+        validator: unref(validator)
+      }, null, 8, ["modelValue", "label", "validator"]);
+    };
+  }
+});
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "InputMail",
+  props: {
+    modelValue: null,
+    required: { type: Boolean },
+    label: { default: "E-mail" }
+  },
+  emits: ["update:modelValue", "search"],
+  setup(__props, { emit }) {
+    const props = __props;
+    const localValue = computed$2({
+      get() {
+        return props.modelValue;
+      },
+      set(value) {
+        emit("update:modelValue", value);
+      }
+    });
+    const validator = ValidatorFactory.createValidator("E-mail").mail();
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(unref(_sfc_main$4), {
+        modelValue: unref(localValue),
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(localValue) ? localValue.value = $event : null),
+        label: props.label,
         validator: unref(validator)
       }, null, 8, ["modelValue", "label", "validator"]);
     };
@@ -10948,4 +10997,4 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-export { _sfc_main as ButtonInfo, _sfc_main$2 as InputCnpj, _sfc_main$1 as InputCpf, _sfc_main$3 as InputText, NButton, __unplugin_components_0$1 as NInput };
+export { _sfc_main as ButtonInfo, _sfc_main$3 as InputCnpj, _sfc_main$2 as InputCpf, _sfc_main$1 as InputMail, _sfc_main$4 as InputText, NButton, __unplugin_components_0$1 as NInput };

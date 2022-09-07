@@ -13,6 +13,8 @@ declare module '@vue/runtime-core' {
     InputCnpjExample: typeof import('./src/components/input/cnpj/examples/InputCnpjExample.vue')['default']
     InputCpf: typeof import('./src/components/input/cpf/src/InputCpf.vue')['default']
     InputCpfExample: typeof import('./src/components/input/cpf/examples/InputCpfExample.vue')['default']
+    InputMail: typeof import('./src/components/input/mail/src/InputMail.vue')['default']
+    InputMailExample: typeof import('./src/components/input/mail/examples/InputMailExample.vue')['default']
     InputText: typeof import('./src/components/input/text/src/InputText.vue')['default']
     InputTextExample: typeof import('./src/components/input/text/examples/InputTextExample.vue')['default']
     NInput: typeof import('naive-ui')['NInput']

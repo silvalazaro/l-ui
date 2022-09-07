@@ -9,4 +9,5 @@ export declare abstract class Validator implements ValidatorInterface {
     required(): this;
     cnpj(): this;
     cpf(): this;
+    mail(): this;
 }
