@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import { InputMail } from "@src/components";
-import { ref } from "@vue/reactivity";
+import { reactive, ref } from "@vue/reactivity";
 
-const mail = ref("laz");
+const model = reactive({
+  mail: 'teste@teste'
+});
 </script>
 
 <template>
   <div>
-    <input-mail v-model="mail" />
+    {{ model.mail }}
+    <input-mail v-model="model.mail" />
   </div>
 </template>
