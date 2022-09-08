@@ -23,7 +23,6 @@ const localValue = computed({
     return props.modelValue;
   },
   set(value:string) {
-    
     emit("update:modelValue", value);
   },
 });

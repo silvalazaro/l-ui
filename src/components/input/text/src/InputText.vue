@@ -6,11 +6,11 @@
       </button-info>
     </div>
     <n-input
-      v-model:value="localValue"
+      v-model:value="maskedValue"
       :placeholder="label"
-      @input="input"
       :status="inputStatus"
       v-mask="props.mask"
+      @update:value="input"
       ref="el"
     />
     <div class="text-left">
@@ -30,7 +30,7 @@ import { computed, handleError } from "@vue/runtime-core";
 import { mask } from "maska";
 import { Validator, ValidatorInterface } from "@src/validator/validator";
 import { vMask } from "@src/mask";
-import { ref, nextTick, onMounted } from "vue";
+import { ref, nextTick, onMounted, watch } from "vue";
 
 interface PropsInterface{
   modelValue: any;
@@ -51,16 +51,13 @@ const emit = defineEmits(["update:modelValue"]);
 // set refs
 const maskedValue = ref("");
 const el = ref();
+// watch
+watch(() => props.modelValue, (value:any) => {
+  maskedValue.value = value
+})
 
 // computed variables
-const localValue = computed({
-  get() {
-    return maskedValue.value || props.modelValue;
-  },
-  set(value: any) {
-    maskedValue.value = value;
-  },
-});
+
 
 // message of error after validation
 const erroMessage = ref("");
